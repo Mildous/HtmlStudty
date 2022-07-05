@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>examMemberJoin</h2>
+<!-- * 입력 *
+    아이디
+    비밀번호
+    이름
+    주민번호
+    전화번호
+    이메일
+    주소
+    성별 : 남자, 여자
+    관심분야 : 여행, 독서, 영화감상, 골프, 낚시, 음악감상, 볼링, 음주가무, 코딩 (9) -->
+    <form name="joinForm" id="joinForm" method="post" action="" style="display: '';">
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="userId"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="userPw"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="userName"></td>
+            </tr>
+            <tr>
+                <td>주민등록번호</td>
+                <td><input type="text" name="userRegi"></td>
+            </tr>
+            <tr>
+                <td>전화번호</td>
+                <td><input type="tel" name="userTel"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="email" name="userEmail"></td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td><input type="text" name="userAddr"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td><input type="radio" name="gender" value="남자">남자<input type="radio" name="gender" value="여자">여자</td>
+            </tr>
+            <tr>
+                <td>관심분야</td>
+                <td>
+                    <label><input type="checkbox" name="interest" class="interest" value="여행">여행</label>
+                    <label><input type="checkbox" name="interest" class="interest" value="독서">독서</label>
+                    <label><input type="checkbox" name="interest" class="interest" value="영화감상">영화감상</label><br>
+                    <label><input type="checkbox" name="interest" class="interest" value="골프">골프</label>
+                    <label><input type="checkbox" name="interest" class="interest" value="낚시">낚시</label>
+                    <label><input type="checkbox" name="interest" class="interest" value="음악감상">음악감상</label><br>
+                    <label><input type="checkbox" name="interest" class="interest" value="볼링">볼링</label>
+                    <label><input type="checkbox" name="interest" class="interest" value="음주가무">음주가무</label>
+                    <label><input type="checkbox" name="interest" class="interest" value="코딩">코딩</label>
+                </td>
+            </tr>
+        </table><hr>
+        <button type="button" onclick="btn();">등록</button>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
+
+<script>
+    function btn() {
+        var hobby = document.getElementsByClassName("interest");
+        var interest = "";
+        var j = document.joinForm;
+        for(var i=0; i<hobby.length; i++) {
+            if(hobby[i].checked == true) {
+                interest += hobby[i].value + ", ";
+            }
+        }
+        interest = interest.substring(0, interest.length-2);
+        document.getElementById("result").innerHTML = "아이디 : " + j.userId.value + "<br>이름 : " + j.userName.value + "<br>전화번호 : " + j.userTel.value + "<br>이메일 : " + j.userEmail.value + "<br>주소 : " + j.userAddr.value + "<br>성별: " + j.gender.value + "<br>관심분야 : " + interest;
+        document.getElementById("joinForm").style.display = "none";
+    }
+</script>

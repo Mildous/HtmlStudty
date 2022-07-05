@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form" method="post" action="sungjukProc.html">
+        <h3>성적 입력</h3>
+        이름 : <input type="text" name="name"><br>
+        국어 : <input type="text" name="kor"><br>
+        영어 : <input type="text" name="eng"><br>
+        수학 : <input type="text" name="math"><br>
+        과학 : <input type="text" name="sci"><br>
+        역사 : <input type="text" name="his"><br><hr>
+        <button type="button" id="btn" onclick="result();">계산하기</button>
+        <div id="re" style="display: none;" >총점 : <input type="text" name="tot"><br>
+        평균 : <input type="text" name="avg"></div>
+    </form>
+    <script>
+        var f = document.form;
+        function result() {
+            var sum = Number(f.kor.value) + Number(f.eng.value) + Number(f.math.value) + Number(f.sci.value) + Number(f.his.value);
+            var avg = sum/5;
+            f.tot.value = sum;
+            f.avg.value = avg;
+            document.getElementById("re").style.display = "";
+            document.getElementById("btn").style.display = "none";
+            f.submit();
+        };
+    </script>
+</body>
+</html>
+

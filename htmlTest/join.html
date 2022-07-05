@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/formChk.js"></script>
+    <title>Join</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        section {
+            width: 1024px;
+            height: 870px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        header {
+            background: #ffe600;
+            width: 100%;
+            height: 10%;
+        }
+        aside {
+            background: #fff8ea;
+            width: 20%;
+            height: 80%;
+        }
+        main {
+            background: #fcfcfc;
+            width: 80%;
+            height:80%;
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+        }
+        footer {
+            background: #fce9e9;
+            width: 100%;
+            height: 10%;
+        }
+        table {border-collapse: collapse; border: 1px solid gray;}
+        td, th {height: 32px; padding: 0 8px;}
+        caption {text-align: center; font: bold 24px/2 "arial";}
+    </style>
+</head>
+<body>
+    <section>
+        <header>
+            header
+        </header>
+
+        <aside>
+            aside
+        </aside>
+
+        <main>
+            <form id="joinForm" name="joinForm" method="post" action="joinProc.html">
+                <table border="1">
+                    <caption>회원가입</caption>
+                    <tr>
+                        <th>아이디</th>
+                        <td><input type="text" name="userId" id="userId" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password" name="userPw" id="userPw" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호 확인</th>
+                        <td><input type="password" name="userPwCheck" id="userPwCheck" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>닉네임</th>
+                        <td><input type="text" name="userNick" id="userNick" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>이름</th>
+                        <td><input type="text" name="userName" id="userName" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>주민등록번호</th>
+                        <td><input type="text" name="userRNum" id="userRNum" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>전화번호</th>
+                        <td><input type="tel" name="userTel" id="userTel" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td><input type="email" name="userEmail" id="userEmail"  size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td><input type="text" name="userAddr" id="userAddr" size="50"></td>
+                    </tr>
+                    <tr>
+                        <th>추천인아이디</th>
+                        <td><input type="text" name="nomiId" id="nomiId" size="50"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" align="center">
+                            <button type="button" onclick="join();">가입하기</button>&nbsp;
+                            <input type="reset" value="다시쓰기"></td>
+                    </tr>
+                </table>
+            </form>
+        </main>
+
+        <footer>
+            footer
+        </footer>
+    </section>
+</body>
+</html>
