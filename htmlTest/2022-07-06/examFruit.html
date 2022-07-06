@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        #fruitList {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .card {
+            width: 200px; height: 250px;
+            border: 1px solid gray;
+            margin: 10px 10px;
+        }
+        img {
+            width: 200px; height: 150px;
+        }
+        h3 {
+            border-top: 1px dotted gray;
+            border-bottom: 1px dotted gray;
+            text-align: center;
+            color: #777777;
+        }
+        .text {
+            font-size: 14px;
+            text-align: center;
+            color: #a0a0a0;
+        }
+    </style>
+</head>
+<body>
+    <div id="fruitList">
+        <div class="card">
+            <div id="apple">
+                <img id="img0_0" src="" alt="">
+                <h3 id="h0_0"></h3>
+                <div class="text" id="t0_0">
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div id="banana">
+                <img id="img0_1" id="t0_1">
+                <h3>바나나</h3>
+                <div class="text">
+                    &#8361; 9,000
+                </div>
+            </div>     
+        </div>
+        <div class="card">
+            <div id="grape">
+                <img src="img0_2" id="t0_1">
+                <h3>포도</h3>
+                <div class="text" id="t0_2">
+                    &#8361; 10,000
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div id="kiwi">
+                <img src="./img/kiwi.jpg" alt="키위">
+                <h3>키위</h3>
+                <div class="text">
+                    &#8361; 8,000
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div id="lemon">
+                <img src="./img/lemon.jpg" alt="레몬">
+                <h3>레몬</h3>
+                <div class="text">
+                    &#8361; 5,000
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div id="peach">
+                <img src="./img/peach.jpg" alt="복숭아">
+                <h3>복숭아</h3>
+                <div class="text">
+                    &#8361; 12,000
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function(){
+        loadContent();
+    });
+    //$(function(){
+    //    $("#apple").click(function(){
+    //        alert('111');         
+    //    });
+    //});
+    function loadContent() {
+        document.getElementById("img0_0").src = "./img/apple.jpg";
+        document.getElementById("img0_0").alt = "사과";
+        document.getElementById("h0_0").innerHTML = "사과";
+        document.getElementById("t0_0").innerHTML = "&#8361; 8,000";
+    }
+</script>
